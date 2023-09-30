@@ -9,7 +9,8 @@ class Student extends Model
 {
     protected $table = 'students';
     protected $fillable = [
-        'grade',
+        'grade_level',
+        'section',
         'email',
         'password',
         'lrn',
@@ -57,4 +58,8 @@ class Student extends Model
         'password' => 'hashed',
     ];
     use HasFactory;
+
+    public function enrollmentInfo(){
+        return $this->belongsTo(EnrollmentInfo::class);
+    }
 }

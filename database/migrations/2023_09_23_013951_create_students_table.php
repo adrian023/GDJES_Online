@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->integer('grade');
+            $table->unsignedBigInteger('grade_level_id');
+            $table->foreign('grade_level_id')->references('id')->on('grade_level');
+            $table->unsignedBigInteger('section_id');
+            $table->foreign('section_id')->references('id')->on('sections');           
             $table->string('email', 40);
             $table->string('password', 255);
             $table->string('lrn', 12);
