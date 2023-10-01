@@ -22,7 +22,6 @@
             <label for="balikAralNo">HINDI</label><br>
             <input type="radio" id="balikAralYes" name="aralStatus" value="OO dahil siya ay nag-DROP o huminto sa pag-aaral noong nakaraang taon">
             <label for="balikAralYes">OO dahil siya ay nag-DROP o huminto sa pag-aaral noong nakaraang taon.</label><br>
-
             <button type="button" onclick="showNextSet('enrollmentInfo')">Next</button>
         </div>
         
@@ -32,14 +31,14 @@
          <div class="form-set" id="returnee"  style="display: none;">
             <label for="returnee">Ano ang huling baitang na natapos?</label><br>
             <select id="returnee" name="returnee">
-                <option value="KINDER">KINDER</option>
-                <option value="GRADE 1">GRADE 1</option>
-                <option value="GRADE 2">GRADE 2</option>
-                <option value="GRADE 3">GRADE 3</option>
-                <option value="GRADE 4">GRADE 4</option>
-                <option value="GRADE 5">GRADE 5</option>
-                <option value="GRADE 6">GRADE 6</option>
-                <option value="ALS">ALS</option>
+                <option value="0">KINDER</option>
+                <option value="1">GRADE 1</option>
+                <option value="2">GRADE 2</option>
+                <option value="3">GRADE 3</option>
+                <option value="4">GRADE 4</option>
+                <option value="5">GRADE 5</option>
+                <option value="6">GRADE 6</option>
+                <option value="7">ALS</option>
             </select><br>
    
             <!-- Last school attended -->
@@ -59,14 +58,14 @@
         <div class="form-set" id="enrollmentInfo" style="display: none;">
             <label for="grade_level">Saang Grade Level mo nais ipalista o i-ENROLL ang inyong anak?</label><br>
             <select id="grade_level" name="grade_level">
-                <option value="KINDER">KINDER</option>
-                <option value="GRADE 1">GRADE 1</option>
-                <option value="GRADE 2">GRADE 2</option>
-                <option value="GRADE 3">GRADE 3</option>
-                <option value="GRADE 4">GRADE 4</option>
-                <option value="GRADE 5">GRADE 5</option>
-                <option value="GRADE 6">GRADE 6</option>
-                <option value="ALS">ALS</option>
+                <option value="0">KINDER</option>
+                <option value="1">GRADE 1</option>
+                <option value="2">GRADE 2</option>
+                <option value="3">GRADE 3</option>
+                <option value="4">GRADE 4</option>
+                <option value="5">GRADE 5</option>
+                <option value="6">GRADE 6</option>
+                <option value="7">ALS</option>
             </select><br>
 
             <!-- School Year -->
@@ -75,9 +74,9 @@
 
             <!-- Learner Reference Number -->
             <label for="lrn">May LRN (Learner Reference Number) ba ang inyong anak?</label><br>
-            <input type="radio" id="lrn_yes" name="lrn_status" value="Mayroon siyang LRN">
+            <input type="radio" id="lrn_yes" name="lrn_status" value="1">
             <label for="lrn_yes">Mayroon siyang LRN</label><br>
-            <input type="radio" id="lrn_no" name="lrn_status" value="Wala siyang LRN dahil sa ay mag-kiKinder pa lang">
+            <input type="radio" id="lrn_no" name="lrn_status" value="0">
             <label for="lrn_no">Wala siyang LRN dahil sa ay mag-kiKinder pa lang</label><br>
 
             <!-- PSA Birth Certificate No. -->
@@ -121,16 +120,16 @@
 
             <!-- Gender -->
             <label for="gender">Kasarian ng Bata</label><br>
-            <input type="radio" id="male" name="gender" value="Lalake">
-            <label for="male">Lalake</label><br>
-            <input type="radio" id="female" name="gender" value="Babae">
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Lalaki</label><br>
+            <input type="radio" id="female" name="gender" value="female">
             <label for="female">Babae</label><br>
 
             <!-- Indigenous Group -->
             <label for="indigenous_group">Nabibilang sa katutubong grupo/ Komunidad ng Katutubong Kultural ang mag-aaral</label><br>
-            <input type="radio" id="indigenous_yes" name="indigenous_group" value="OO">
+            <input type="radio" id="indigenous_yes" name="indigenous_group" value="1">
             <label for="indigenous_yes">OO</label><br>
-            <input type="radio" id="indigenous_no" name="indigenous_group" value="HINDI">
+            <input type="radio" id="indigenous_no" name="indigenous_group" value="0">
             <label for="indigenous_no">HINDI</label><br>
 
             <!-- Indigenous Group Name -->                                                                  <!-- set this as if else statement -->
@@ -168,9 +167,9 @@
 
             <!-- Special Needs -->
             <label for="special_needs">Ang mag-aaral ba ay nangangailangan ng espesyal na tulong sa pag-aaral?</label><br>
-            <input type="radio" id="special_needs_no" name="special_needs" value="WALA">
+            <input type="radio" id="special_needs_no" name="special_needs" value="0">
             <label for="special_needs_no">WALA</label><br>
-            <input type="radio" id="special_needs_yes" name="special_needs" value="MAYROON">
+            <input type="radio" id="special_needs_yes" name="special_needs" value="1">
             <label for="special_needs_yes">MAYROON</label><br>
 
             <!-- Special Needs Description -->                                      <!-- if others is selected get user input-->
@@ -305,9 +304,9 @@
 
             <!-- 4ps -->
             <label for="4ps">Kabilang ba ang pamilya ng bata sa 4ps ng DSWD?</label><br>
-            <input type="radio" id="4ps_yes" name="4ps" value="OO">
+            <input type="radio" id="4ps_yes" name="4ps" value="1">
             <label for="4ps_yes">OO</label><br>
-            <input type="radio" id="4ps_no" name="4ps" value="HINDI">
+            <input type="radio" id="4ps_no" name="4ps" value="0">
             <label for="4ps_no">HINDI</label><br>
 
             <!-- 4ps Household ID -->                                                <!-- if others is selected get user input-->                                           
@@ -322,42 +321,42 @@
         <!-- Learning Information -->                                      
         <div class="form-set" id="learningInfo" style="display: none;">
             <label for="household_info">Piliin ang angkop na mga sagot</label><br>
-            <input type="checkbox" id="cellphone_tablet" name="household_info[]" value="May sariling Cellphone/Tablet ang Bata">
+            <input type="checkbox" id="cellphone_tablet" name="learning_info[]" value="cellphone/tablet">
             <label for="cellphone_tablet">May sariling Cellphone/Tablet ang Bata</label><br>
 
-            <input type="checkbox" id="computer" name="household_info[]" value="May computer sa bahay">
+            <input type="checkbox" id="computer" name="learning_info[]" value="Computer">
             <label for="computer">May computer sa bahay</label><br>
 
-            <input type="checkbox" id="no_gadget" name="household_info[]" value="Walang sariling gadget ang bata">
+            <input type="checkbox" id="no_gadget" name="learning_info[]" value="no nadget">
             <label for="no_gadget">Walang sariling gadget ang bata</label><br>
 
-            <input type="checkbox" id="tv" name="household_info[]" value="May tv sa bahay">
+            <input type="checkbox" id="tv" name="learning_info[]" value="television">
             <label for="tv">May tv sa bahay</label><br>
 
-            <input type="checkbox" id="internet" name="household_info[]" value="May internet connection sa bahay">
+            <input type="checkbox" id="internet" name="learning_info[]" value="internet">
             <label for="internet">May internet connection sa bahay</label><br>
 
-            <input type="checkbox" id="mobile_data" name="household_info[]" value="Mobile data lamang ang gamit para makaconnect sa internet">
+            <input type="checkbox" id="mobile_data" name="learning_info[]" value="mobile data">
             <label for="mobile_data">Mobile data lamang ang gamit para makaconnect sa internet</label><br>
 
             <!-- Distance Learning Preference -->
             <label for="distance_learning">Kung ang paaralan ay magpapatupad ng distance learning, ano ang nais mo para sa iyong anak?</label><br>
-            <input type="radio" id="modular_printed" name="distance_learning[]" value="Modular Printed">
+            <input type="radio" id="modular_printed" name="distance_learning" value="Modular Printed">
             <label for="modular_printed">Modular Printed</label><br>
 
-            <input type="radio" id="modular_digital" name="distance_learning[]" value="Modular Digital">
+            <input type="radio" id="modular_digital" name="distance_learning" value="Modular Digital">
             <label for="modular_digital">Modular Digital</label><br>
 
-            <input type="radio" id="online" name="distance_learning[]" value="Online">
+            <input type="radio" id="online" name="distance_learning" value="Online">
             <label for="online">Online</label><br>
 
-            <input type="radio" id="educational_tv" name="distance_learning[]" value="Educational Television">
+            <input type="radio" id="educational_tv" name="distance_learning" value="Educational Television">
             <label for="educational_tv">Educational Television</label><br>
 
-            <input type="radio" id="homeschooling" name="distance_learning[]" value="Homeschooling">
+            <input type="radio" id="homeschooling" name="distance_learning" value="Homeschooling">
             <label for="homeschooling">Homeschooling</label><br>
 
-            <input type="radio" id="blended" name="distance_learning[]" value="Blended">
+            <input type="radio" id="blended" name="distance_learning" value="Blended">
             <label for="blended">Blended</label><br>
 
             <button type="button" onclick="showPrevSet('householdInfo')">Back</button>

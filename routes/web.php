@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EnrollmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('enrollment', function (){ return view('enrollment'); })->name('enrollmentGet');
+Route::post('enrollment', [EnrollmentController::class, 'postEnrollment'])->name('enrollmentPost');
+
+Route::get('enrollment1', [EnrollmentController::class, 'getEnrollment1'])->name('enrollmentGet1');
+Route::post('enrollment1', [EnrollmentController::class, 'postEnrollment1'])->name('enrollmentPost1');

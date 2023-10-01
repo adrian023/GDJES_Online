@@ -1,0 +1,57 @@
+/* Add your custom styles here */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style the form container */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.form-set {
+    display: none;
+}
+
+/* Style the form headings */
+h1 {
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Style the form inputs */
+input[type="text"], input[type="email"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the radio buttons */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}

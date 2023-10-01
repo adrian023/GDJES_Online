@@ -2,59 +2,47 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 
 class Student extends Model
 {
+    use HasFactory;
+
     protected $table = 'students';
-    protected $fillable = [
-        'grade',
-        'email',
-        'password',
-        'lrn',
-        'psa_number',
-        'last_name',
-        'first_name',
-        'middle_name',
-        'extension_name',
-        'birth_date',
-        'age',
-        'gender',
-        'is_indigenous',
-        'indigenous_group',
-        'kinagisnang_wika',
-        'religion',
-        'has_special_condition',
-        'special_condition',
-        'address',
-        'barangay',
-        'city',
-        'father_last_name',
-        'father_first_name',
-        'father_middle_name',
-        'father_cell_no',
-        'mother_last_name',
-        'mother_first_name',
-        'mother_middle_name',
-        'mother_cell_no',
-        'guardian_last_name',
-        'guardian_first_name',
-        'guardian_middle_name',
-        'guardian_cell_no',
-        'is_4p',
-        'household_id',
-        'has_own_cellphone_and_tablet',
-        'has_computer',
-        'no_gadgets',
-        'has_tv',
-        'has_internet',
-        'mobile_data_only',
-        'distance_learning',
+    protected $primaryKey = 'id';
+
+    protected $attributes = [
+        'lrnStatus' => '1',
+        'isIndigenous' => '0',
+        'needSpecialAssistance' => '0',
     ];
 
     protected $casts = [
-        'password' => 'hashed',
+        'lrnStatus' => 'boolean',
+        'isIndigenous' => 'boolean',
+        'needSpecialAssistance' => 'boolean',        
     ];
-    use HasFactory;
+    
+    public function household(): HasOne{
+        return $this->hasOne(Household::class);
+    }
+
+    public function father(): HasOneThrough{
+        return $this->hasOneThrough(Father::class, Relative::class);        
+    }
+
+    public function mother(): HasOneThrough{
+        return $this->hasOneThrough(Mother::class, Relative::class);
+    }
+
+    public function guardian(): HasOneThrough{
+        return $this->hasOneThrough(Guardian::class, Relative::class);
+    }
+
+    public function learningInfo(): HasOne{
+        return $this->hasOne(Learning::class);
+    }
 }
