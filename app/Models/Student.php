@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOneThrough;
@@ -25,7 +26,7 @@ class Student extends Model
         'isIndigenous' => 'boolean',
         'needSpecialAssistance' => 'boolean',        
     ];
-    
+
     public function household(): HasOne{
         return $this->hasOne(Household::class);
     }
@@ -45,4 +46,9 @@ class Student extends Model
     public function learningInfo(): HasOne{
         return $this->hasOne(Learning::class);
     }
+
+    public function returnee(): BelongsTo{
+        return $this->belongsTo(Returnee::class);
+    }
 }
+        

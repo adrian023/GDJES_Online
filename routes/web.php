@@ -22,3 +22,11 @@ Route::post('enrollment', [EnrollmentController::class, 'postEnrollment'])->name
 
 Route::get('enrollment1', [EnrollmentController::class, 'getEnrollment1'])->name('enrollmentGet1');
 Route::post('enrollment1', [EnrollmentController::class, 'postEnrollment1'])->name('enrollmentPost1');
+
+Route::get('login', function () {
+    return view('welcome');
+})->name('login');
+
+Route::get('register', function () {
+    return view('welcome');
+})->name('register');
